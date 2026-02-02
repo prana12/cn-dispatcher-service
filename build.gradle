@@ -16,6 +16,7 @@ repositories {
 }
 
 ext {
+	set('otelVersion', "1.33.3")
 	set('springCloudVersion', "2025.0.1")
 }
 
@@ -29,6 +30,7 @@ dependencies {
 	implementation 'org.springframework.retry:spring-retry'
 
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+	runtimeOnly "io.opentelemetry.javaagent:opentelemetry-javaagent:${otelVersion}"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
